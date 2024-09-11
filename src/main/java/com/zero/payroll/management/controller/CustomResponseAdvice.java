@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseBodyAdvice;
 
-@RestControllerAdvice(basePackages = "com.zero.payroll.management.service.controller")
+@RestControllerAdvice(basePackages = "com.zero.payroll.management.controller")
 public class CustomResponseAdvice extends BaseController implements ResponseBodyAdvice<Object> {
 
     @Override

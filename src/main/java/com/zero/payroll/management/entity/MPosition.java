@@ -9,7 +9,7 @@ import lombok.*;
 @Setter
 @Builder
 @Entity
-@Table(name = "m_group")
+@Table(name = "m_position")
 public class MPosition extends BaseEntity {
 
     @Id

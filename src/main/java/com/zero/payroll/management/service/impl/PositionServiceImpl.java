@@ -47,8 +47,8 @@ public class PositionServiceImpl extends AbstractCrudService<PositionRequest, Po
     public PositionResponse create(PositionRequest request, HeaderRequest header) {
         MPosition position = MPosition.builder().build();
         setPosition(position, request);
-        setCreatedBy(header, position);
-        setUpdatedBy(header, position);
+        setCreatedBy(position, header);
+        setUpdatedBy(position, header);
 
         position = positionRepository.save(position);
         return EntityHelper.toPositionResponse(position);
@@ -58,7 +58,7 @@ public class PositionServiceImpl extends AbstractCrudService<PositionRequest, Po
     public PositionResponse update(Long id, PositionRequest request, HeaderRequest header) {
         MPosition position = getById(id);
         setPosition(position, request);
-        setUpdatedBy(header, position);
+        setUpdatedBy(position, header);
 
         position = positionRepository.save(position);
         return EntityHelper.toPositionResponse(position);
