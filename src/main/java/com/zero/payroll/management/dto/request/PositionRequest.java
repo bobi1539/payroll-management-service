@@ -18,4 +18,6 @@ public class PositionRequest {
 
     @NotNull(message = Constant.BASIC_SALARY_REQUIRED)
     private Double basicSalary;
+
+    private Double allowance;
 }

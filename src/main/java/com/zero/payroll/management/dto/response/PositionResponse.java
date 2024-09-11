@@ -11,4 +11,5 @@ public class PositionResponse extends BaseEntityResponse {
     private Long id;
     private String name;
     private Double basicSalary;
+    private Double allowance;
 }

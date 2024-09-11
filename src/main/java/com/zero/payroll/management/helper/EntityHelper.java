@@ -28,6 +28,7 @@ public final class EntityHelper {
                 .id(position.getId())
                 .name(position.getName())
                 .basicSalary(position.getBasicSalary())
+                .allowance(position.getAllowance())
                 .build();
         setBaseEntityResponse(response, position);
         return response;

@@ -21,7 +21,10 @@ public class MPosition extends BaseEntity {
     private String name;
 
     @Column(name = "basic_salary")
-    private Double basicSalary = 0D;
+    private Double basicSalary;
+
+    @Column(name = "allowance")
+    private Double allowance;
 
     public static final String FIELD_NAME = "name";
 }

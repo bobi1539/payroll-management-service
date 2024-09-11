@@ -81,6 +81,7 @@ public class PositionServiceImpl extends AbstractCrudService<PositionRequest, Po
     private void setPosition(MPosition position, PositionRequest request) {
         position.setName(request.getName());
         position.setBasicSalary(request.getBasicSalary());
+        position.setAllowance(request.getAllowance());
     }
 
     private Specification<MPosition> createSpec(SearchDto searchDto) {

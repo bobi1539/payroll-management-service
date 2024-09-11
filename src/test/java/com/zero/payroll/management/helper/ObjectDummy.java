@@ -28,11 +28,11 @@ public final class ObjectDummy {
     }
 
     public static MPosition getPosition() {
-        return MPosition.builder().id(1L).name("Manager").basicSalary(10_000_000D).build();
+        return MPosition.builder().id(1L).name("Manager").basicSalary(10_000_000D).allowance(500_000D).build();
     }
 
     public static PositionRequest getPositionRequest() {
-        return PositionRequest.builder().name("Manager").basicSalary(10_000_000D).build();
+        return PositionRequest.builder().name("Manager").basicSalary(10_000_000D).allowance(500_000D).build();
     }
 
     public static PositionResponse getPositionResponse() {
