@@ -3,12 +3,11 @@ package com.zero.payroll.management.service;
 import com.zero.payroll.management.dto.PageDto;
 import com.zero.payroll.management.dto.request.HeaderRequest;
 import com.zero.payroll.management.entity.BaseEntity;
-import com.zero.payroll.management.entity.MPosition;
 import com.zero.payroll.management.helper.PageHelper;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 
-public abstract class AbstractCrudService<T, R> implements CrudService<T, R> {
+public abstract class AbstractCrudService {
 
     protected static final String FIELD_ID = "id";
 

@@ -4,7 +4,7 @@ import com.zero.payroll.management.constant.Endpoint;
 import com.zero.payroll.management.dto.request.HeaderRequest;
 import com.zero.payroll.management.dto.request.PositionRequest;
 import com.zero.payroll.management.dto.response.PositionResponse;
-import com.zero.payroll.management.service.CrudService;
+import com.zero.payroll.management.service.PositionService;
 import io.swagger.v3.oas.annotations.Parameter;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
@@ -18,7 +18,7 @@ import java.util.List;
 @AllArgsConstructor
 public class PositionController extends BaseController {
 
-    private final CrudService<PositionRequest, PositionResponse> positionService;
+    private final PositionService positionService;
 
     @GetMapping("/all")
     public List<PositionResponse> findAll(@RequestParam(required = false) String search) {

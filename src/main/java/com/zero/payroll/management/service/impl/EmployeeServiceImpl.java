@@ -15,6 +15,7 @@ import com.zero.payroll.management.helper.SpecificationHelper;
 import com.zero.payroll.management.repository.EmployeeRepository;
 import com.zero.payroll.management.repository.PositionRepository;
 import com.zero.payroll.management.service.AbstractCrudService;
+import com.zero.payroll.management.service.EmployeeService;
 import lombok.AllArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.jpa.domain.Specification;
@@ -24,7 +25,7 @@ import java.util.List;
 
 @AllArgsConstructor
 @Service
-public class EmployeeServiceImpl extends AbstractCrudService<EmployeeRequest, EmployeeResponse> {
+public class EmployeeServiceImpl extends AbstractCrudService implements EmployeeService {
 
     private final EmployeeRepository employeeRepository;
     private final PositionRepository positionRepository;

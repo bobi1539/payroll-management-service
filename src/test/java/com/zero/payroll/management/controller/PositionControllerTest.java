@@ -3,7 +3,7 @@ package com.zero.payroll.management.controller;
 import com.zero.payroll.management.dto.request.PositionRequest;
 import com.zero.payroll.management.dto.response.PositionResponse;
 import com.zero.payroll.management.helper.ObjectDummy;
-import com.zero.payroll.management.service.CrudService;
+import com.zero.payroll.management.service.PositionService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
@@ -24,7 +24,7 @@ class PositionControllerTest extends ControllerTest {
     private PositionController controller;
 
     @Mock
-    private CrudService<PositionRequest, PositionResponse> service;
+    private PositionService service;
 
     private final PositionRequest positionRequest = ObjectDummy.getPositionRequest();
     private final PositionResponse positionResponse = ObjectDummy.getPositionResponse();

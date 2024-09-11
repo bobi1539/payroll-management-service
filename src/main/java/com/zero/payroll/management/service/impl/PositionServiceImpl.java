@@ -13,6 +13,7 @@ import com.zero.payroll.management.helper.EntityHelper;
 import com.zero.payroll.management.helper.SpecificationHelper;
 import com.zero.payroll.management.repository.PositionRepository;
 import com.zero.payroll.management.service.AbstractCrudService;
+import com.zero.payroll.management.service.PositionService;
 import lombok.AllArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.jpa.domain.Specification;
@@ -22,7 +23,7 @@ import java.util.List;
 
 @AllArgsConstructor
 @Service
-public class PositionServiceImpl extends AbstractCrudService<PositionRequest, PositionResponse> {
+public class PositionServiceImpl extends AbstractCrudService implements PositionService {
 
     private final PositionRepository positionRepository;
 
