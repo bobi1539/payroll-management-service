@@ -1,11 +1,13 @@
 package com.zero.payroll.management.controller;
 
+import com.zero.payroll.management.constant.Constant;
 import com.zero.payroll.management.constant.Endpoint;
 import com.zero.payroll.management.dto.request.HeaderRequest;
 import com.zero.payroll.management.dto.request.PositionRequest;
 import com.zero.payroll.management.dto.response.PositionResponse;
 import com.zero.payroll.management.service.PositionService;
 import io.swagger.v3.oas.annotations.Parameter;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import org.springframework.data.domain.Page;
@@ -16,6 +18,7 @@ import java.util.List;
 @RestController
 @RequestMapping(Endpoint.POSITION)
 @AllArgsConstructor
+@SecurityRequirement(name = Constant.AUTHORIZATION)
 public class PositionController extends BaseController {
 
     private final PositionService positionService;

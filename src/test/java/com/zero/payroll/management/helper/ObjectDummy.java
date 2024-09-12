@@ -1,15 +1,19 @@
 package com.zero.payroll.management.helper;
 
 import com.zero.payroll.management.constant.GlobalMessage;
+import com.zero.payroll.management.dto.JwtComponentDto;
 import com.zero.payroll.management.dto.PageDto;
 import com.zero.payroll.management.dto.SearchDto;
 import com.zero.payroll.management.dto.request.EmployeeRequest;
 import com.zero.payroll.management.dto.request.HeaderRequest;
+import com.zero.payroll.management.dto.request.LoginRequest;
 import com.zero.payroll.management.dto.request.PositionRequest;
 import com.zero.payroll.management.dto.response.EmployeeResponse;
+import com.zero.payroll.management.dto.response.LoginResponse;
 import com.zero.payroll.management.dto.response.PositionResponse;
 import com.zero.payroll.management.entity.MEmployee;
 import com.zero.payroll.management.entity.MPosition;
+import com.zero.payroll.management.entity.MUser;
 import com.zero.payroll.management.exception.BusinessException;
 
 import java.text.ParseException;
@@ -18,9 +22,15 @@ import java.util.Date;
 
 public final class ObjectDummy {
 
+
     private ObjectDummy() {
         throw new BusinessException(GlobalMessage.INTERNAL_SERVER_ERROR);
     }
+
+    public static final String JWT = "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwic3ViIjoiYWRtaW4iLCJpYXQiOjE" +
+            "3MjYxMDUyMDgsImV4cCI6MTc1NzY0MTIwOH0.GCHe-PZy5ES38A8lDxuDkHbxWSM6ZAlkmzMpMrR8HFk";
+    public static final String JWT_SECRET = "357643192F423F44284GXabT72B4B6250655368566D597133743677397A2543164629";
+    public static final String JWT_EXPIRED_DURATION = "31536000000";
 
     public static Date getDate(String dateString) {
         try {
@@ -82,5 +92,30 @@ public final class ObjectDummy {
 
     public static EmployeeResponse getEmployeeResponse() {
         return EntityHelper.toEmployeeResponse(getEmployee());
+    }
+
+    public static LoginRequest getLoginRequest() {
+        return LoginRequest.builder()
+                .username("admin")
+                .password("admin147")
+                .build();
+    }
+
+    public static LoginResponse getLoginResponse() {
+        return LoginResponse.builder()
+                .jwt(JWT)
+                .build();
+    }
+
+    public static MUser getUser() {
+        return MUser.builder()
+                .id(1L)
+                .username("admin")
+                .password("$2a$12$aXJHIHcSPjINQaVjgxmKgOtsN9Ifb7D3TatHZYBjIk4ZEVu6E7lb2")
+                .build();
+    }
+
+    public static JwtComponentDto getJwtComponentDto() {
+        return JwtComponentDto.builder().username("admin").build();
     }
 }
